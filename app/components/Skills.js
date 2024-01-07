@@ -82,10 +82,10 @@ const Skills = () => {
                 high-quality solutions that achieve user satisfaction.
               </p>
             </div>
-            <div className="flex justify-around items-start">
+            <div className="flex flex-col justify-around items-center sm:items-start sm:flex-row">
               <ul
                 role="list"
-                className="mt-8 space-y-3 leading-6 text-gray-600 font-semibold"
+                className="mt-8 space-y-3 leading-6 text-gray-600 font-semibold mb-12 ml-4 self-start sm:mb-0 sm:ml-0"
               >
                 <li className="flex gap-x-3 items-center">
                   <span className="h-4 w-4 rounded-full bg-emerald-500" />
