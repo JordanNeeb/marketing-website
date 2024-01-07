@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import LogoCloud from "./components/LogoCloud";
 import Stats from "./components/Stats";
 import WorkHistory from "./components/WorkHistory";
+import Skills from "./components/Skills";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -20,6 +21,7 @@ const Page = () => {
       <LogoCloud />
       <Stats />
       <WorkHistory />
+      <Skills />
     </div>
   );
 };

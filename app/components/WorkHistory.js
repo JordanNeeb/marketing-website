@@ -57,7 +57,7 @@ const WorkHistory = () => {
                   aria-hidden="true"
                 />
               </time>
-              <p className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
+              <p className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-600">
                 {item.name}
               </p>
               <p className="mt-1 flex text-xs leading-5 text-gray-500">
