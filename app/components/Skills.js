@@ -10,9 +10,9 @@ const skills = [
   { technology: "Vue", secondary: "Nuxt", width: "w-11/12" },
   { technology: "MobX", width: "w-10/12" },
   { technology: "Redux", width: "w-6/12" },
-  { technology: "Tailwind", width: "w-11/12" },
-  { technology: "Styled Components", width: "w-10/12" },
+  { technology: "Tailwind", secondary: "Styled Components", width: "w-11/12" },
   { technology: "React Native", width: "w-7/12" },
+  { technology: "Git", width: "w-8/12" },
   { technology: "Node", secondary: "Nestjs", width: "w-9/12" },
   { technology: "GraphQL", width: "w-6/12" },
   { technology: "Supabase", secondary: "Firebase", width: "w-10/12" },
@@ -51,7 +51,10 @@ const Skills = () => {
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
           <div>
             {skills.map((skill) => (
-              <div className="mt-4 text-left text-gray-600 font-semibold">
+              <div
+                key={skill.technology}
+                className="mt-4 text-left text-gray-600 font-semibold"
+              >
                 <span>{skill.technology}</span>
                 {skill.secondary ? (
                   <span className="text-gray-400 font-normal">

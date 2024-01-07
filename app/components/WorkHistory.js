@@ -76,8 +76,8 @@ const WorkHistory = () => {
             What am I up to now?
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            I'm currently working as a contract developer on some exciting and
-            innovative projects involving artificial intelligence, machine
+            I&apos;m currently working as a contract developer on some exciting
+            and innovative projects involving artificial intelligence, machine
             learning and game development.
           </p>
         </div>

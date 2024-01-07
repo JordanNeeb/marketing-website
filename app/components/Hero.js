@@ -29,7 +29,7 @@ const Hero = () => {
                 Full stack developer
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                I'm a web developer with an eye for design and a love for
+                I&apos;m a web developer with an eye for design and a love for
                 writing clean, efficient code.
               </p>
               <div className="mt-10 flex items-center gap-x-6">

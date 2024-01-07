@@ -20,15 +20,15 @@ const About = () => {
               </div>
               <div className="mt-8 leading-8 text-white sm:leading-9">
                 <p>
-                  Naming variables since 2014, I've had the pleasure of working
-                  with so many wonderful and brilliant developers on a number of
-                  different projects. I had no idea that "Hello, world" would
-                  lead to such amazing things.
+                  Naming variables since 2014, I&apos;ve had the pleasure of
+                  working with so many wonderful and brilliant developers on a
+                  number of different projects. I had no idea that &quot;Hello,
+                  world&quot; would lead to such amazing things.
                 </p>
                 <p className="pt-4">
-                  When I'm not sitting at a computer, you'll usually find me
-                  playing music, hanging out with my lovely girlfriend and our
-                  dog or building guitar pedals.
+                  When I&apos;m not sitting at a computer, you&apos;ll usually
+                  find me playing music, hanging out with my lovely girlfriend
+                  and our dog or building guitar pedals.
                 </p>
               </div>
             </div>
