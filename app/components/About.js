@@ -16,7 +16,7 @@ const About = () => {
             <div className="relative isolate">
               <div className="text-base">
                 <div className="font-semibold text-white">Jordan Neeb</div>
-                <div className="mt-1 text-gray-400">St. John's, NL</div>
+                <div className="mt-1 text-gray-400">St. John&apos;s, NL</div>
               </div>
               <div className="mt-8 leading-8 text-white sm:leading-9">
                 <p>
