@@ -6,6 +6,7 @@ import Stats from "./components/Stats";
 import WorkHistory from "./components/WorkHistory";
 import Skills from "./components/Skills";
 import About from "./components/About";
+import Footer from "./components/Footer";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -24,6 +25,7 @@ const Page = () => {
       <WorkHistory />
       <Skills />
       <About />
+      <Footer />
     </div>
   );
 };
