@@ -1,6 +1,23 @@
 import Image from "next/image";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
+// // Simulates tab or shift + tab
+// const handleKeyDown = (e) => {
+//   // Arrow down or arrow up
+//   if (e.keyCode === 40 || e.keyCode === 38) {
+//     // Ordered array of elements with tabIndex="0"
+//     const elements = getIndexed(select.current, []);
+//     let targetIndex = elements.findIndex((el) => el === e.target);
+
+//     // Confuses you for a second
+//     targetIndex += (39 - e.keyCode) * -1;
+
+//     if (elements[targetIndex]) {
+//       elements[targetIndex].focus();
+//     }
+//   }
+// };
+
 const Hero = () => {
   return (
     <>
