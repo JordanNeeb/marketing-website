@@ -2,6 +2,7 @@ import { Montserrat } from "next/font/google";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import LogoCloud from "./components/LogoCloud";
+import Stats from "./components/Stats";
 
 const montserrat = Montserrat({
   weight: ["400", "600"],
@@ -16,6 +17,7 @@ const Page = () => {
         <Hero />
       </div>
       <LogoCloud />
+      <Stats />
     </div>
   );
 };
