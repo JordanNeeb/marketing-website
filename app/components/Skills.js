@@ -12,7 +12,7 @@ const skills = [
   { technology: "Redux", width: "w-6/12" },
   { technology: "Tailwind", secondary: "Styled Components", width: "w-11/12" },
   { technology: "React Native", width: "w-7/12" },
-  { technology: "Git", width: "w-10/12" },
+  { technology: "Git", width: "w-9/12" },
   { technology: "Node", secondary: "Nestjs", width: "w-9/12" },
   { technology: "GraphQL", width: "w-6/12" },
   { technology: "Supabase", secondary: "Firebase", width: "w-10/12" },
