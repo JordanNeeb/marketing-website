@@ -32,7 +32,7 @@ const Header = () => {
             Jordan Neeb
           </span>
         </a>
-        <div className="flex lg:hidden">
+        <div className="flex sm:hidden">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -42,7 +42,7 @@ const Header = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden sm:flex sm:gap-x-12">
           {navigation.map((item) => (
             <a
               key={item.name}
@@ -56,7 +56,7 @@ const Header = () => {
       </nav>
       <Dialog
         as="div"
-        className="lg:hidden"
+        className="sm:hidden"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >

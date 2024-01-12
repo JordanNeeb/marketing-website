@@ -3,7 +3,7 @@ const history = [
     name: "Contract Web Developer",
     title: "Freelance",
     description:
-      "Designed, built and deployed websites for companies including Rockway Building Supplies, ComSpec and goTOMovers Ltd. using a range of technologies.",
+      "Designed, built and deployed websites for companies including Rockway Building Supplies, ComSpec and goTOMovers Ltd. using Vue, React and the WordPress REST API.",
     date: "May 2016",
     dateTime: "2016-05",
   },

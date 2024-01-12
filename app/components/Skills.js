@@ -12,7 +12,7 @@ const skills = [
   { technology: "Redux", width: "w-6/12" },
   { technology: "Tailwind", secondary: "Styled Components", width: "w-11/12" },
   { technology: "React Native", width: "w-7/12" },
-  { technology: "Git", width: "w-8/12" },
+  { technology: "Git", width: "w-9/12" },
   { technology: "Node", secondary: "Nestjs", width: "w-9/12" },
   { technology: "GraphQL", width: "w-6/12" },
   { technology: "Supabase", secondary: "Firebase", width: "w-10/12" },
@@ -79,7 +79,7 @@ const Skills = () => {
                 Specializing in front end development, I focus on creating
                 performant, visually appealing and user-friendly interfaces. I
                 prioritize staying updated on industry trends to deliver
-                high-quality solutions that achieve user satisfaction.
+                high-quality solutions as quickly as possible.
               </p>
             </div>
             <div className="flex flex-col justify-around items-center sm:items-start sm:flex-row">
