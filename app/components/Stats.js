@@ -15,7 +15,7 @@ const Stats = () => {
   const interval = useRef();
 
   useEffect(() => {
-    const startDate = new Date("January 1, 2016 00:00:00 GMT+00:00");
+    const startDate = new Date("May 1, 2016 00:00:00 GMT+00:00");
     const nowDate = new Date();
     const msOfExperience = nowDate.getTime() - startDate.getTime();
 
