@@ -19,6 +19,7 @@ const skills = [
   { technology: "PostgreSQL", width: "w-8/12" },
   { technology: "MongoDB", width: "w-9/12" },
   { technology: "Python", secondary: "Django", width: "w-4/12" },
+  { technology: "Docker", width: "w-3/12" },
 ];
 
 const frontendDoughnutData = {
