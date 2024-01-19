@@ -49,6 +49,7 @@ const Hero = () => {
                 </a>
                 <a
                   href="https://github.com/JordanNeeb"
+                  target="_blank"
                   className="text-xs sm:text-sm font-semibold leading-6 text-gray-900"
                 >
                   Check out my Github <span aria-hidden="true">→</span>
