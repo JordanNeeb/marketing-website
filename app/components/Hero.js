@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useRef, useEffect } from "react";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 // // Simulates tab or shift + tab
@@ -20,7 +20,16 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 //   }
 // };
 
-const Hero = () => {
+const Hero = ({ setLoading }) => {
+  const image = useRef();
+
+  useEffect(() => {
+    if (image.current.complete) {
+      setLoading(false);
+    }
+    console.log("image", image.current.complete);
+  }, []);
+
   return (
     <>
       <div className="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-28">
@@ -72,7 +81,13 @@ const Hero = () => {
               <div className="relative px-6 pt-8 sm:pt-16 md:pl-16 md:pr-0">
                 <div className="mx-auto max-w-2xl md:mx-0 md:max-w-none">
                   <div className="w-screen overflow-hidden rounded-tl-xl bg-transparent">
-                    <Image src="/confusing.png" width={600} height={600} />
+                    <img
+                      src="/confusing.png"
+                      width={600}
+                      height={600}
+                      ref={image}
+                      onLoad={() => setLoading(false)}
+                    />
                   </div>
                 </div>
                 <div
