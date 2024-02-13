@@ -14,11 +14,11 @@ const skills = [
   { technology: "React Native", width: "w-7/12" },
   { technology: "Git", width: "w-9/12" },
   { technology: "Node", secondary: "Nestjs", width: "w-9/12" },
-  { technology: "GraphQL", width: "w-6/12" },
+  { technology: "Ollama", secondary: "LangChain", width: "w-11/12" },
   { technology: "Supabase", secondary: "Firebase", width: "w-10/12" },
   { technology: "PostgreSQL", width: "w-8/12" },
   { technology: "MongoDB", width: "w-9/12" },
-  { technology: "Python", secondary: "Django", width: "w-4/12" },
+  { technology: "Python", secondary: "Django", width: "w-6/12" },
   { technology: "Docker", width: "w-3/12" },
 ];
 
