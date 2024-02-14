@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Sacramento } from "next/font/google";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "About me", href: "#about" },
-  { name: "My resume", href: "#resume" },
+  { name: "About me", href: "/#about" },
+  { name: "My resume", href: "/#resume" },
+  { name: "Chat", href: "/chat" },
 ];
 
 const sacramento = Sacramento({
@@ -18,13 +20,15 @@ const sacramento = Sacramento({
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const pathname = usePathname();
+
   return (
     <header>
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
-        <a href="#" className="-m-1.5 p-1.5">
+        <a href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
           <span
             className={`${sacramento.className} text-3xl sm:text-4xl text-emerald-600`}
@@ -47,7 +51,12 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className={`${
+                item.href.replace("/", "") === pathname.split("/")[1]
+                  ? "text-emerald-600 "
+                  : "text-gray-900 "
+              }
+                text-sm font-semibold leading-6 hover:text-emerald-600`}
             >
               {item.name}
             </a>
