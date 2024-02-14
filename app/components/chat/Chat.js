@@ -7,6 +7,7 @@ const Chat = () => {
   const [prompt, setPrompt] = useState("");
 
   const inputRef = useRef(null);
+  const suggestedPrompt = "What's the weather like in San Francisco?";
 
   const handleInput = (value) => {
     setPrompt(value);
@@ -19,10 +20,20 @@ const Chat = () => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      handleSubmit(e);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log(prompt);
+
+    setPrompt("");
+    inputRef.current.focus();
+    inputRef.current.style.height = "auto";
   };
 
   return (
@@ -30,13 +41,20 @@ const Chat = () => {
       <div className="flex items-center max-w-2xl text-center grow">
         <div>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            With retrieval augmented generation, you can unlock real-time
-            capabilities and access live data.
+            By augmenting generative AI with supplemental data from external
+            sources, we can unlock real-time capabilities to improve accuracy
+            and reliability.
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Try asking something like,{" "}
-            <span className="text-emerald-600 font-semibold">
-              "What is the weather in San Francisco?"
+            <span
+              className="text-emerald-600 font-semibold cursor-pointer"
+              onClick={() => {
+                handleInput(suggestedPrompt);
+                inputRef.current.focus();
+              }}
+            >
+              {suggestedPrompt}
             </span>
           </p>
         </div>
@@ -57,8 +75,10 @@ const Chat = () => {
               autoComplete="off"
               autoFocus
               ref={inputRef}
+              value={prompt}
               className="block w-full bg-gray-100 resize-none overflow-y-hidden h-12 max-h-40 rounded-md border-0 pl-4 pr-12 py-3 text-gray-900 shadow-sm focus:ring-2 focus:ring-inset focus:ring-emerald-600 sm:text-sm sm:leading-6 outline-0"
               onChange={(e) => handleInput(e.target.value)}
+              onKeyDown={(e) => handleKeyDown(e)}
             />
             <button
               type="submit"
