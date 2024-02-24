@@ -24,7 +24,7 @@ const Header = () => {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
-        <a href="#" className="-m-1.5 p-1.5">
+        <a href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
           <span
             className={`${sacramento.className} text-3xl sm:text-4xl text-emerald-600`}
