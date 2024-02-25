@@ -85,7 +85,7 @@ const Resume = () => {
             Full stack developer
           </p>
           {/* Address */}
-          <dl className="mt-12 mb-4">
+          <dl className="mt-20 mb-4">
             <dt className="text-base font-semibold leading-7 text-emerald-600">
               Address
             </dt>
@@ -97,10 +97,19 @@ const Resume = () => {
             </dd>
             <dd className="text-sm leading-7 text-gray-600">A1C 2K9</dd>
           </dl>
+          {/* Hardware */}
+          <dl className="mb-4">
+            <dt className="text-base font-semibold leading-7 text-emerald-600">
+              Hardware
+            </dt>
+            <dd className="mt-2 text-sm leading-7 text-gray-600">
+              M3 Max 40-core 64GB
+            </dd>
+          </dl>
           {/* Skills */}
-          <div className="bg-white pb-12 mt-24">
+          <div className="bg-white pb-12 mt-6">
             <div className="mx-auto max-w-7xl pr-8">
-              <dl className="grid grid-cols-1 gap-x-8 gap-y-8 text-center">
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-2 text-center">
                 <div>
                   {skills.map((skill) => (
                     <div
@@ -182,9 +191,6 @@ const Resume = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="h-72 w-72">
-            <Doughnut data={backendDoughnutData} />
-          </div> */}
               </dl>
             </div>
           </div>
@@ -214,9 +220,9 @@ const Resume = () => {
           {/* Profile */}
           <ul
             role="list"
-            className="mt-8 space-y-12 divide-y divide-gray-200 xl:col-span-3"
+            className="mt-16 space-y-12 divide-y divide-gray-200 xl:col-span-3"
           >
-            <li className="flex flex-row gap-10 pt-12">
+            <li className="flex flex-row gap-10 pt-10">
               <div className="aspect-[4/5] w-40 flex-none rounded-2xl bg-[url('/profile.jpg')] bg-center bg-cover bg-no-repeat" />
               <div className="max-w-xl flex-auto">
                 <h3 className="text-md font-semibold leading-8 tracking-tight text-emerald-600">
