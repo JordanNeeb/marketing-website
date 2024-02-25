@@ -27,7 +27,7 @@ const contactInfo = [
   },
   {
     name: "Email",
-    value: "info@jordanneeb.com",
+    value: "jordan.neeb@wrinkleinc.ca",
     icon: EnvelopeIcon,
   },
   {
@@ -142,11 +142,15 @@ const Resume = () => {
           <span className={`${sacramento.className} text-5xl text-emerald-600`}>
             Jordan Neeb
           </span>
-          <p className="text-sm font-semibold text-slate-500 mt-2 pl-7">
+          <p
+            className={`text-sm font-semibold text-slate-500 mt-2 pl-7 ${
+              !downloading ? "-translate-y-5" : ""
+            }`}
+          >
             Full stack developer
           </p>
           {/* Address */}
-          <dl className="my-8">
+          <dl className="mt-12 mb-4">
             <dt className="text-base font-semibold leading-7 text-emerald-600">
               Address
             </dt>

@@ -27,7 +27,6 @@ const Hero = ({ setLoading }) => {
     if (image.current.complete) {
       setLoading(false);
     }
-    console.log("image", image.current.complete);
   }, []);
 
   return (
@@ -44,7 +43,7 @@ const Hero = ({ setLoading }) => {
                 writing clean, efficient code.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <a href="#resume">
+                <a href="/Jordan_Neeb_Resume.pdf" download>
                   <button
                     type="button"
                     className="inline-flex items-center gap-x-2 rounded-md bg-emerald-600 px-3.5 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600"
