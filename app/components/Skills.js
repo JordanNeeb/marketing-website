@@ -2,48 +2,9 @@
 
 import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import { skills, doughnutData } from "../lib/vars";
 
 ChartJS.register(ArcElement);
-
-const skills = [
-  { technology: "React", secondary: "Next", width: "w-11/12" },
-  { technology: "Vue", secondary: "Nuxt", width: "w-11/12" },
-  { technology: "MobX", width: "w-10/12" },
-  { technology: "Redux", width: "w-6/12" },
-  { technology: "Tailwind", secondary: "Styled Components", width: "w-11/12" },
-  { technology: "React Native", width: "w-7/12" },
-  { technology: "Git", width: "w-9/12" },
-  { technology: "Node", secondary: "Nestjs", width: "w-9/12" },
-  { technology: "Ollama", secondary: "LangChain", width: "w-11/12" },
-  { technology: "Supabase", secondary: "Firebase", width: "w-10/12" },
-  { technology: "PostgreSQL", width: "w-8/12" },
-  { technology: "MongoDB", width: "w-9/12" },
-  { technology: "Python", secondary: "Django", width: "w-6/12" },
-  { technology: "Docker", width: "w-3/12" },
-];
-
-const frontendDoughnutData = {
-  datasets: [
-    {
-      data: [55, 35, 8, 3],
-      backgroundColor: [
-        "rgb(16, 185, 129)",
-        "rgb(245,158,11)",
-        "rgb(14,165,233)",
-        "rgb(139,92,246)",
-      ],
-    },
-  ],
-};
-
-const backendDoughnutData = {
-  datasets: [
-    {
-      data: [8, 4],
-      backgroundColor: ["rgb(16, 185, 129)", "rgb(229, 231, 235)"],
-    },
-  ],
-};
 
 const Skills = () => {
   return (
@@ -106,13 +67,10 @@ const Skills = () => {
                 </li>
               </ul>
               <div className="h-72 w-72">
-                <Doughnut data={frontendDoughnutData} />
+                <Doughnut data={doughnutData} />
               </div>
             </div>
           </div>
-          {/* <div className="h-72 w-72">
-            <Doughnut data={backendDoughnutData} />
-          </div> */}
         </dl>
       </div>
     </div>
