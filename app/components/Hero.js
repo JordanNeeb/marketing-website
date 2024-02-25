@@ -40,7 +40,7 @@ const Hero = ({ setLoading }) => {
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 I&apos;m a web developer with an eye for design and a love for
-                writing clean, efficient code.
+                writing clean, robust code.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <a href="/Jordan_Neeb_Resume.pdf" download>
