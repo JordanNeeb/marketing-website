@@ -157,7 +157,9 @@ const Resume = () => {
             <dd className="mt-2 text-sm leading-7 text-gray-600">
               26 Pennywell Rd.
             </dd>
-            <dd className="text-sm leading-7 text-gray-600">St. John's, NL</dd>
+            <dd className="text-sm leading-7 text-gray-600">
+              St. John&apos;s, NL
+            </dd>
             <dd className="text-sm leading-7 text-gray-600">A1C 2K9</dd>
           </dl>
           {/* Skills */}
