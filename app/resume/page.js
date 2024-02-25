@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Sacramento } from "next/font/google";
 import {
   DevicePhoneMobileIcon,
@@ -8,7 +9,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { Chart as ChartJS, ArcElement } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import LogoCloud from "../components/LogoCloud";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 const sacramento = Sacramento({
   weight: "400",
@@ -20,17 +22,17 @@ ChartJS.register(ArcElement);
 const contactInfo = [
   {
     name: "Phone",
-    email: "+1 (226) 268-1055",
+    value: "+1 (226) 268-1055",
     icon: DevicePhoneMobileIcon,
   },
   {
     name: "Email",
-    email: "info@jordanneeb.com",
+    value: "info@jordanneeb.com",
     icon: EnvelopeIcon,
   },
   {
     name: "Website",
-    email: "jordanneeb.com",
+    value: "jordanneeb.com",
     icon: GlobeEuropeAfricaIcon,
   },
 ];
@@ -87,7 +89,7 @@ const skills = [
   { technology: "Docker", width: "w-3/12" },
 ];
 
-const frontendDoughnutData = {
+const doughnutData = {
   datasets: [
     {
       data: [55, 35, 8, 3],
@@ -101,18 +103,38 @@ const frontendDoughnutData = {
   ],
 };
 
-const backendDoughnutData = {
-  datasets: [
-    {
-      data: [8, 4],
-      backgroundColor: ["rgb(16, 185, 129)", "rgb(229, 231, 235)"],
-    },
-  ],
+const doughnutOptions = {
+  animation: {
+    duration: 0,
+  },
 };
 
 const Resume = () => {
+  const [downloading, setDownloading] = useState(true);
+
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    downloadPDF();
+  }, []);
+
+  const downloadPDF = () => {
+    html2canvas(canvasRef.current, { width: 1190, height: 1724 }).then(
+      (canvas) => {
+        let imgWidth = 208;
+        let imgHeight = (canvas.height * imgWidth) / canvas.width;
+        const imgData = canvas.toDataURL("img/png");
+        const pdf = new jsPDF("p", "mm", "a4");
+        pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+        pdf.save("Jordan_Neeb_Resume.pdf");
+      }
+    );
+
+    setDownloading(false);
+  };
+
   return (
-    <div className="bg-white p-6">
+    <div ref={canvasRef} className="bg-white p-6 w-[1190px]">
       <div className="grid grid-cols-3">
         {/* Left column */}
         <div className="flex flex-col col-span-1">
@@ -120,7 +142,7 @@ const Resume = () => {
           <span className={`${sacramento.className} text-5xl text-emerald-600`}>
             Jordan Neeb
           </span>
-          <p className="text-sm font-semibold text-slate-500 mt-2">
+          <p className="text-sm font-semibold text-slate-500 mt-2 pl-7">
             Full stack developer
           </p>
           {/* Address */}
@@ -137,20 +159,24 @@ const Resume = () => {
           {/* Skills */}
           <div className="bg-white pb-12 mt-24">
             <div className="mx-auto max-w-7xl pr-8">
-              <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center">
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-8 text-center">
                 <div>
                   {skills.map((skill) => (
                     <div
                       key={skill.technology}
                       className="mt-4 text-left text-gray-600 font-semibold"
                     >
-                      <span>{skill.technology}</span>
-                      {skill.secondary ? (
-                        <span className="text-gray-400 font-normal">
-                          {" "}
-                          | {skill.secondary}
-                        </span>
-                      ) : null}
+                      <div
+                        className={`${downloading ? "-translate-y-1/3" : ""}`}
+                      >
+                        <span>{skill.technology}</span>
+                        {skill.secondary ? (
+                          <span className="text-gray-400 font-normal">
+                            {" "}
+                            | {skill.secondary}
+                          </span>
+                        ) : null}
+                      </div>
                       <div className="mt-2 h-2 rounded-full bg-gray-200">
                         <div
                           className={`h-2 rounded-full bg-emerald-500 ${skill.width}`}
@@ -179,23 +205,39 @@ const Resume = () => {
                     >
                       <li className="flex gap-x-3 items-center">
                         <span className="w-3 h-3 rounded-full bg-emerald-500" />
-                        Frontend
+                        <span
+                          className={`${downloading ? "-translate-y-1/3" : ""}`}
+                        >
+                          Frontend
+                        </span>
                       </li>
                       <li className="flex gap-x-3 items-center">
                         <span className="w-3 h-3 rounded-full bg-amber-500" />
-                        Backend
+                        <span
+                          className={`${downloading ? "-translate-y-1/3" : ""}`}
+                        >
+                          Backend
+                        </span>
                       </li>
                       <li className="flex gap-x-3 items-center">
                         <span className="w-3 h-3 rounded-full bg-sky-500" />
-                        Design
+                        <span
+                          className={`${downloading ? "-translate-y-1/3" : ""}`}
+                        >
+                          Design
+                        </span>
                       </li>
                       <li className="flex gap-x-3 items-center">
                         <span className="w-3 h-3 rounded-full bg-violet-500" />
-                        Dev Ops
+                        <span
+                          className={`${downloading ? "-translate-y-1/3" : ""}`}
+                        >
+                          Dev Ops
+                        </span>
                       </li>
                     </ul>
                     <div className="h-40 w-40">
-                      <Doughnut data={frontendDoughnutData} />
+                      <Doughnut data={doughnutData} options={doughnutOptions} />
                     </div>
                   </div>
                 </div>
@@ -209,13 +251,17 @@ const Resume = () => {
         {/* Right column */}
         <div className="col-span-2 flex flex-col pl-8">
           {/* Contact info */}
-          <ul role="list" className=" flex justify-end gap-x-8">
+          <ul role="list" className=" flex justify-end gap-x-8 h-12">
             {contactInfo.map((item) => (
               <li key={item.email} className="flex items-center gap-x-2">
                 <item.icon className="h-4 w-4 text-slate-900 stroke-2" />
                 <div className="min-w-0">
-                  <p className="text-sm font-semibold text-slate-500">
-                    {item.email}
+                  <p
+                    className={`text-sm font-semibold text-slate-500 ${
+                      downloading ? "-translate-y-1/3" : ""
+                    }`}
+                  >
+                    {item.value}
                   </p>
                   {/* <p className="mt-1 truncate text-xs leading-5 text-gray-500">
                   {item.email}
@@ -229,12 +275,8 @@ const Resume = () => {
             role="list"
             className="mt-8 space-y-12 divide-y divide-gray-200 xl:col-span-3"
           >
-            <li className="flex flex-col gap-10 pt-12 sm:flex-row">
-              <img
-                className="aspect-[4/5] w-40 flex-none rounded-2xl object-cover"
-                src="/profile.jpg"
-                alt=""
-              />
+            <li className="flex flex-row gap-10 pt-12">
+              <div className="aspect-[4/5] w-40 flex-none rounded-2xl bg-[url('/profile.jpg')] bg-center bg-cover bg-no-repeat" />
               <div className="max-w-xl flex-auto">
                 <h3 className="text-md font-semibold leading-8 tracking-tight text-emerald-600">
                   Profile
@@ -260,7 +302,7 @@ const Resume = () => {
           {/* Work history */}
           <div className="bg-white py-12">
             <div className="mx-auto max-w-7xl">
-              <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none">
+              <div className="grid grid-cols-1 gap-8 overflow-hidden mx-0 max-w-none">
                 {history.map((item) => (
                   <div key={item.name}>
                     <time
@@ -274,9 +316,13 @@ const Resume = () => {
                       >
                         <circle cx={2} cy={2} r={2} fill="currentColor" />
                       </svg>
-                      {item.date}
+                      <span
+                        className={`${downloading ? "-translate-y-1/3" : ""}`}
+                      >
+                        {item.date}
+                      </span>
                       <div
-                        className="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
+                        className="h-px bg-gray-900/10 static -mr-6 ml-8 w-auto flex-auto translate-x-0"
                         aria-hidden="true"
                       />
                     </time>
@@ -310,7 +356,7 @@ const Resume = () => {
       </div>
       {/* Logo cloud */}
       <div className="mx-auto max-w-7xl pb-8">
-        <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:grid-cols-6 sm:max-w-xl sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none">
+        <div className="grid items-center grid-cols-6 gap-x-10 gap-y-14 mx-0 max-w-none">
           {/* Vue */}
           <div className="flex justify-center">
             <svg
