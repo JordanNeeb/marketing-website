@@ -2,17 +2,10 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const stats = [
-  { id: 1, name: "Transactions every 24 hours", value: "44 million" },
-  { id: 2, name: "Assets under holding", value: "$119 trillion" },
-  { id: 3, name: "New users annually", value: "46,000" },
-];
-
 const Stats = () => {
   const [yearsExperience, setYearsExperience] = useState(null);
   const [linesOfCode, setLinesOfCode] = useState(null);
   const [cupsOfCoffee, setCupsOfCoffee] = useState(null);
-  const interval = useRef();
 
   useEffect(() => {
     const startDate = new Date("May 1, 2016 00:00:00 GMT+00:00");
