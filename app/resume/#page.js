@@ -292,9 +292,7 @@ const Resume = () => {
                   What am I up to now?
                 </p>
                 <p className="mt-6 text-ms leading-8 text-gray-600">
-                  I&apos;m currently working as a contract developer on some
-                  exciting and innovative projects involving artificial
-                  intelligence, machine learning and game development.
+                  Honestly, not a whole lot. Hire me.
                 </p>
               </div>
             </div>
