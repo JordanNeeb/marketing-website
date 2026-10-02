@@ -240,8 +240,8 @@ const Resume = () => {
                 </p>
                 <p className="mt-2 text-sm leading-7 text-gray-600">
                   When I&apos;m not sitting at a computer, you&apos;ll usually
-                  find me playing music, hanging out with my lovely girlfriend
-                  and our dog or building guitar pedals.
+                  find me playing guitar, chopping wood or sitting by the fire
+                  with my beautiful wife and her three boys.
                 </p>
               </div>
             </li>
